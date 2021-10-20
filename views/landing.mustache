@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>My Portfolio</title>
+    <meta name="description" content="" />
+
+    {{>head}}
+</head>
+
+<body>
+    <div class="blocks-page">
+
+        <section class="smart-scroll">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand heading-black" href="/">
+                        <img class="img-logo" src="{{{page.header.img_logo_nav}}}=s520"/>
+                    </a>
+                    <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
+                            data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav ml-auto mobile-nav">
+                            {{#page.header.header_nav.nav1.show_or_hide}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#hero_section">{{page.header.header_nav.nav1.text}}</a>
+                            </li>
+                            {{/page.header.header_nav.nav1.show_or_hide}}
+
+                            {{#page.header.header_nav.nav2.show_or_hide}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#gallery">{{page.header.header_nav.nav2.text}}</a>
+                            </li>
+                            {{/page.header.header_nav.nav2.show_or_hide}}
+
+                            {{#page.header.header_nav.nav3.show_or_hide}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#Skills">{{page.header.header_nav.nav3.text}}</a>
+                            </li>
+                            {{/page.header.header_nav.nav3.show_or_hide}}
+
+                            {{#page.header.header_nav.nav4.show_or_hide}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#contact">{{page.header.header_nav.nav4.text}}</a>
+                            </li>
+                            {{/page.header.header_nav.nav4.show_or_hide}}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+        <section id="hero_section" style="background:url('{{{page.hero.img_background}}}=s2048');background-size:cover;background-position:center;">
+            <div class="gradient-div py-3" style="height:76vh">
+        
+                <div class="container">
+                    <div class="row justify-content-center header-row">
+                        <div class="col-12 col-md-8 col-lg-7 text-center text-white">
+                            <img class="mt-4" style="width:180px;border-radius:50%;" src="{{{page.hero.img_profile}}}=s320-c"/>
+                            <h1 class="display-3 mt-1">{{page.hero.greeting}}</h1>
+                            <p class="lead text-white mb-4 mt-1">
+                                {{page.hero.introduction}}
+                            </p>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-5 py-md-7">
+            <div class="container py-md-5">
+                <div class="row block-header">
+                    <div class="col-sm-8 mx-auto text-center">
+                        <h1 class="display-4 mt-2">{{page.projects.header}}</h1>
+                        <hr>
+                        <p class="lead">{{page.projects.subheader}}</p>
+                    </div>
+                </div>
+                <div class="row mt-5 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                    {{#projects}}
+                    <div class="col-md-4 col-sm-12 mb-2r">
+                        <a href="/project/{{slug}}">
+                            <div class="position-relative project">
+                                <div class="image position-relative ">
+                                    <img src="{{{image}}}=s650-c" class="img-fluid w-100 d-block">
+                                    <div class="overlay-box">
+                                        <div class="overlay-inner overlay-content">
+                                            <h5 class="mb-0">{{name}}</h5>
+                                            <p>{{category}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {{/projects}}
+                </div>
+            </div>
+        </section>
+
+        <section id="Skills" class="py-md-5 block">
+            <div class="container">
+                <div class="row block-header">
+                    <div class="col-sm-8 mx-auto text-center">
+                        <h1 class="display-4 mt-2">Skills</h1>
+                        <hr>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, totam ipsa quia hic odit a sit laboriosam voluptatem in, blanditiis.</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-4 service mb-5 aos-init aos-animate">
+                        <img class="icon mr-4" src="{{{page.service.img_1}}}">
+                        <div class="content">
+                            <h5>Web Development</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, earum.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 service mb-5 aos-init aos-animate">
+                        <img class="icon mr-4" src="{{{page.service.img_2}}}">
+                        <div class="content">
+                            <h5>Video Marketing</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, earum.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 service mb-5 aos-init aos-animate">
+                        <img class="icon mr-4" src="{{{page.service.img_3}}}">
+                        <div class="content">
+                            <h5>App Design</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, earum.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 service mb-5 aos-init aos-animate">
+                        <img class="icon mr-4" src="{{{page.service.img_4}}}">
+                        <div class="content">
+                            <h5>Graphics Design</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, earum.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 service mb-5 aos-init aos-animate">
+                        <img class="icon mr-4" src="{{{page.service.img_5}}}">
+                        <div class="content">
+                            <h5>Digital Marketing</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, earum.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 service mb-5 aos-init aos-animate">
+                        <img class="icon mr-4" src="{{{page.service.img_6}}}">
+                        <div class="content">
+                            <h5>Branding Design</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, earum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="py-md-5 mb-2r">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 mx-auto text-center mb-5">
+                        <h1 class="display-4 mt-2 section-title">Lets collaborate!!</h1>
+                        <p>Reach out if you are interested in working together, I will get back right away.</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-sm-6 mx-auto" data-aos="fade-left" data-aos-duration="1000">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <input type="text" id="edd-user-name" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="edd-user-email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="edd-user-subject" class="form-control" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="" id="edd-user-message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                            </div>
+                            <div class="form-group text-center">
+                                <input id="contact-btn-submit" type="submit" id="btn-register" class="btn btn-primary btn-send-message" value="Send Message">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="pt-3">
+            <div class="container pt-5 pb-5">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p><img class="img-logo-footer" src="{{{page.footer.img_logo_footer}}}=s440"/></p>
+        
+                        <ul class="list-inline social social-white-alt social-rounded social-sm mb-0">
+                            {{#page.footer.social.facebook.show_or_hide}}
+                            <li class="list-inline-item"><a href="{{{page.footer.social.facebook.link}}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            {{/page.footer.social.facebook.show_or_hide}}
+        
+                            {{#page.footer.social.twitter.show_or_hide}}
+                            <li class="list-inline-item"><a href="{{{page.footer.social.twitter.link}}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            {{/page.footer.social.twitter.show_or_hide}}
+        
+                            {{#page.footer.social.linkedin.show_or_hide}}
+                            <li class="list-inline-item"><a href="{{{page.footer.social.linkedin.link}}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            {{/page.footer.social.linkedin.show_or_hide}}
+        
+                            {{#page.footer.social.instagram.show_or_hide}}
+                            <li class="list-inline-item"><a href="{{{page.footer.social.instagram.link}}}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            {{/page.footer.social.instagram.show_or_hide}}
+        
+                            {{#page.footer.social.youtube.show_or_hide}}
+                            <li class="list-inline-item"><a href="{{{page.footer.social.youtube.link}}}" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                            {{/page.footer.social.youtube.show_or_hide}}
+        
+                            {{#page.footer.social.github.show_or_hide}}
+                            <li class="list-inline-item"><a href="{{{page.footer.social.github.link}}}" target="_blank"><i class="fa fa-github"></i></a></li>
+                            {{/page.footer.social.github.show_or_hide}}
+        
+                            {{#page.footer.social.dribbble.show_or_hide}}
+                            <li class="list-inline-item"><a href="{{{page.footer.social.dribbble.link}}}" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                            {{/page.footer.social.dribbble.show_or_hide}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    {{>scripts}}
+    <script src="{{{cdn}}}/js/contact.js"></script>
+</body>
+</html>
